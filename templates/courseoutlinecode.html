@@ -1,0 +1,258 @@
+{% comment %} {% extends "layouts/base.html" %} {% block title %} SPMS{% endblock %} {% endcomment %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+<style>
+ 
+    /* Styling the Body element i.e. Color,
+    Font, Alignment */
+    body {
+        background-color: #e8f1f8;
+        font-family: Verdana;
+        text-align: center;
+    }
+
+    /* Styling the Form (Color, Padding, Shadow) */
+    form {
+        background-color: #fff;
+        width:100%;
+        
+        margin: 50px auto;
+        padding: 30px 20px;
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Styling form-control Class */
+    .form-control {
+        text-align: left;
+        margin-bottom: 25px;
+    }
+
+    /* Styling form-control Label */
+    .form-control label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* Styling form-control input,
+    select, textarea */
+    .form-control input,
+    .form-control select,
+    .form-control textarea {
+        border: 1px solid #777;
+        border-radius: 2px;
+        font-family: inherit;
+        padding: 10px;
+        display: block;
+        width: 95%;
+    }
+
+    /* Styling form-control Radio
+    button and Checkbox */
+    .form-control input[type="radio"],
+    .form-control input[type="checkbox"] {
+        display: inline-block;
+        width: auto;
+    }
+
+    /* Styling Button */
+    button {
+        background-color: #05c46b;
+        border: 1px solid #777;
+        border-radius: 2px;
+        font-family: inherit;
+        font-size: 21px;
+        display: block;
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+</style>
+{% endblock stylesheets %}
+
+
+  
+<body>
+    <h1>Course Outline</h1>
+  
+    <!-- Create Form -->
+    <form id="form">
+        <form method ="post">
+        {% csrf_token %}
+ 
+            <!-- Details -->
+            <div class="form-control">
+                <label for="coursecode" id="label-coursecode">
+                    Course Code
+                </label>
+    
+                <!-- Input Type Text -->
+                <input type="text"
+                    id="coursecode"
+                    name ="course_code"
+                    placeholder="Enter the course code.." />
+            </div>
+    
+            <div class="form-control">
+                <label for="type" id="label-type">
+                    Course Type
+                </label>
+    
+                <!-- Input Type Email-->
+                <input type="text"
+                    id="type"
+                    name ="course_type"
+                    placeholder="Enter your course type.." />
+            </div>
+    
+            <div class="form-control">
+                <label for="title" id="label-title">
+                    Course Title
+                </label>
+    
+                <!-- Input Type Text -->
+                <input type="text"
+                    id="title"
+                    name = "course_title"
+                    placeholder="Enter your course title.." />
+            </div>
+    
+            <div class="form-control">
+                <label for="credit" id="label-credit">
+                    Credit Value
+                </label>
+                
+                <!-- Dropdown options -->
+                {% comment %} <select name="value" id="value">
+                    <option value="1">1</option>
+                    <option value="3">3</option>
+                    <option value="4">
+                        4
+                    </option>
+                    <option value="other">Other</option>
+                </select> {% endcomment %}
+                <input type="number"
+                    id ="value"
+                    name="credit_value"
+                    placeholder="Enter the course credit.."/>
+
+            </div>
+    
+            
+    
+            
+    
+            <div class="form-control">
+                <label for="comment">
+                    Course Description
+                </label>
+    
+                <!-- multi-line text input control -->
+                <textarea name="comment" id="comment" name="course_description"
+                    placeholder="Enter your description here">
+                </textarea>
+            </div>
+            <div class="form-control">
+                <label for="comment">
+                    Course Objective
+                </label>
+    
+                <!-- multi-line text input control -->
+                <textarea name="comment" id="comment" name="course_objective"
+                    placeholder="Enter your objectives here ">
+                </textarea>
+            </div>
+            <div class="form-control">
+                <label for="comment">
+                    Course Policy
+                </label>
+    
+                <!-- multi-line text input control -->
+                <textarea name="comment" id="comment" name="course_policy"
+                    placeholder="Enter your policy here">
+                </textarea>
+            </div>
+            <div class="form-control">
+                <label for="comment">
+                    Academic Dishonesty 
+                </label>
+    
+                <!-- multi-line text input control -->
+                <textarea name="comment" id="comment" name="academic_dishonesty"
+                    placeholder="Enter your comment here">
+                </textarea>
+            </div>
+            <div class="form-control">
+                <label for="comment">
+                    Non Discreminatory Policy
+                </label>
+    
+                <!-- multi-line text input control -->
+                <textarea name="comment" id="comment" name="non_discreminatory_policy"
+                    placeholder="Enter your comment here">
+                </textarea>
+            </div>
+            {% comment %} <div class="form-control">
+                <p> Web application architecture & HTML5:<br>
+                    1. Students will be introduced to the web application architecture.<br>
+                    2. Students will learn how the Model-Views-Template (MVT) design pattern works.<br>
+                    3. Students will be introduced to HTML5.<br>
+                    4. Students will basic HTML5 document structure.<br>
+                    5. Students will learn how to use Github to upload project codes to Github repositories.<br>
+                    6. Students will learn widely used HTML tags and its uses.<br>
+                    7. Students will learn URL schemes, hierarchy, and query parameters.<br>
+                    8. Students will learn to create HTML5 web pages.<br>
+                    CSS & Responsive Designing:<br>
+                    1. Students will learn about CSS selectors, properties, and style placement.<br>
+                    2. Students will learn how to use CSS styling along with HTML web pages to design a web page.<br>
+                    3. Students will be introduced to responsive web page designing using CSS.<br>
+                    JavaScript:<br>
+                    1. Students will learn JavaScript arrays, functions, and objects.<br>
+                    2. Students will be introduced to JavaScript regular expressions and exceptions.<br>
+                    Document Object Model (DOM) and jQuery:<br>
+                    1. Students will be introduced to the concept of DOM.<br>
+                    2. Students will learn DOM manipulation with JavaScript.<br>
+                    3. Students will learn to use jQuery select elements, manipulate elements, DOM traversal, events, and
+                    effects.<br>
+                    Client-side Storage & Server-Browser Communication:<br>
+                    1. Students will be introduced to web server.<br>
+                    2. Students will learn communication between a browser and a server using HTTP, AJAX, Rest API, and
+                    HTML5 web sockets.<br>
+                    Introduction to MySQL:<br>
+                    1. Students will learn how to use MySQL Workbench.<br>
+                    2. Students will learn how to create a new database using MySQL workbench.<br>
+                    3. Students will learn how to manipulate the data in the database.<br>
+                    4. Students will learn how to create, read, update, and delete data from a database using SQL queries.<br>
+                    Introduction to Node.js & MySQL CRUD operations:<br>
+                    1. Students will be introduced to the Node.js Framework.<br>
+                    2. Students will learn how to use Node.js and MySQL queries to do CRUD (Create-Read-Update-Delete)
+                    operations.<br>
+                    
+                    Node.js & MySQL:<br>
+                    1. Students will learn how to load CSV files to MySQL database using Node.js.<br>
+                    2. Students will learn how to use SQL queries to load data from MySQL database to the application
+                    interface.<br>
+                    Plotly:<br>
+                    1. Students will learn how to create interactive plotly graphs in Node.js.</p><br>
+            </div> {% endcomment %}
+            {% comment %} <div class="form-control">
+                <label for="comment">
+                    Any comments or suggestions
+                </label>
+    
+                <!-- multi-line text input control -->
+                <textarea name="comment" id="comment"
+                    placeholder="Enter your comment here">
+                </textarea>
+            </div>
+     {% endcomment %}
+            <!-- Multi-line Text Input Control -->
+            <button type="submit" value="submit">
+                Submit
+            </button>
+            <input type="text" value="{{output}}"/>
+        </form>
+    </form>
+</body>
+  
+</html>
